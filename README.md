@@ -28,6 +28,6 @@ Hey there! I'm Paul Stone, and I believe in a "bottom to top approach" to unders
 
 📚 Aside from my passion for technology and mathematics, I'm an avid reader. I find solace in collecting books and often find myself lost in the stories they hold. Books, with their ability to teach, heal, and inspire, are a testament to the power of human connection through storytelling. They have the remarkable capacity to guide us, expand our imagination, and offer solace in the darkest of times.
 
-💻 I firmly believe that computers are direct reflections of our imagination - a medium through which our ideas come to life and open new vistas for exploration. Much like books, they enable us to rediscover and reimagine the world around us. Never underestimate the power of reading and the boundless possibilities it holds.
+💻 I believe that computers are direct reflections of our imagination - a medium through which our ideas come to life and open new vistas for exploration. Much like books, they enable us to rediscover and reimagine the world around us. Never underestimate the power of reading and the boundless possibilities it holds.
 
 </div>
