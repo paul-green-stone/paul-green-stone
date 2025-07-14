@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Library - Paul Stone</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/library.svg" />
+
+    <style>
+        /* When button has 'open' class, animate spans to form a cross */
+        #burger.open span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+    
+        #burger.open span:nth-child(2) {
+          opacity: 0;
+        }
+    
+        #burger.open span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+      </style>
+</head>
+<!-- Here go comments -->
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <nav class="bg-gray-900 text-white">
+        <div class="container mx-auto flex items-center justify-between p-4">
+          
+            <!-- Logo + Photo container -->
+            <a href="index.html" class="flex items-center space-x-3 hover:text-indigo-400">
+                <!-- Photo -->
+                <img 
+                src="assets/images/paul.jpg" 
+                alt="Paul Stone" 
+                class="w-10 h-10 rounded-full object-cover border-2 border-indigo-400"
+                />
+                <!-- Logo text -->
+                <span class="text-2xl font-bold whitespace-nowrap">Paul Stone</span>
+            </a>
+      
+          <!-- Burger Menu Button -->
+          <button id="burger" aria-label="Toggle menu" aria-expanded="false" class="md:hidden flex flex-col justify-center items-center w-10 h-10 relative group">
+            <span class="block w-8 h-1 bg-indigo-400 rounded transition-transform duration-300 ease-in-out origin-center mb-1"></span>
+            <span class="block w-8 h-1 bg-indigo-400 rounded transition-opacity duration-300 ease-in-out"></span>
+            <span class="block w-8 h-1 bg-indigo-400 rounded transition-transform duration-300 ease-in-out origin-center mt-1"></span>
+          </button>
+      
+          <!-- Desktop Menu -->
+          <div id="menu" class="hidden md:flex space-x-6">
+            <a href="index.html" class="hover:text-indigo-400 border-b-2 border-transparent hover:border-indigo-400 pb-1 transition-colors duration-300 inline-block">
+              <span>Home</span>
+            </a>
+            <a href="library.html" class="text-indigo-400 font-semibold border-b-2 border-indigo-400 pb-1 inline-block">
+              <span>Library</span>
+            </a>
+            <a href="projects.html" class="hover:text-indigo-400 border-b-2 border-transparent hover:border-indigo-400 pb-1 transition-colors duration-300 inline-block">
+              <span>Projects</span>
+            </a>
+          </div>
+        </div>
+      
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+          <div class="container mx-auto flex flex-col p-4 space-y-3">
+            <a href="index.html" class="group hover:text-indigo-400 transition-colors duration-300 pb-1 inline-block">
+              <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+                Home
+              </span>
+            </a>
+            <a href="library.html" class="text-indigo-400 font-semibold group hover:text-indigo-400 transition-colors duration-300 pb-1 inline-block">
+              <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+                Library
+              </span>
+            </a>
+            <a href="projects.html" class="group hover:text-indigo-400 transition-colors duration-300 pb-1 inline-block">
+              <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+                Projects
+              </span>
+            </a>
+          </div>
+        </div>
+    </nav>      
+
+    <main class="flex-grow container mx-auto px-6 py-16 max-w-4xl">
+
+        <h1 class="text-3xl font-bold mb-6">Library</h1>
+        <p class="mb-4">
+          Here are all the materials, articles, and books I've read related to C/C++ development, game programming, and GUI design.
+        </p>
+      
+        <!-- Grid container for cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center">
+            <!-- Card 1 -->
+            <a href="https://www.amazon.com/dp/0137909101" target="_blank" rel="noopener noreferrer" 
+               class="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out no-underline transform hover:scale-105 transition-transform duration-300 max-w-xs">
+              <img 
+                src="https://covers.openlibrary.org/b/isbn/0137909101-M.jpg" 
+                alt="Book Cover for ISBN 0137909101" 
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6 flex flex-col justify-between h-56">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Code: The Hidden Language of Computer Hardware and Software</h3>
+                  <p class="text-gray-600 text-sm mb-4">The classic guide to how computers work</p>
+                </div>
+                <button class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition-colors duration-300">
+                  Buy on Amazon
+                </button>
+              </div>
+            </a>
+          
+            <!-- Card 2 -->
+            <a href="https://www.amazon.com/dp/0131103628" target="_blank" rel="noopener noreferrer" 
+               class="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out no-underline transform hover:scale-105 transition-transform duration-300 max-w-xs">
+              <img 
+                src="https://covers.openlibrary.org/b/isbn/0131103628-M.jpg" 
+                alt="Book Cover for ISBN 0131103628" 
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6 flex flex-col justify-between h-56">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">The C Programming Language</h3>
+                  <p class="text-gray-600 text-sm mb-4">A definitive, concise guide to ANSI standard C programming by the language's creators   </p>
+                </div>
+                <button class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition-colors duration-300">
+                  Buy on Amazon
+                </button>
+              </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="https://www.amazon.com/dp/013409266X" target="_blank" rel="noopener noreferrer" 
+               class="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out no-underline transform hover:scale-105 transition-transform duration-300 max-w-xs">
+              <img 
+                src="https://covers.openlibrary.org/b/isbn/013409266X-M.jpg" 
+                alt="Book Cover for ISBN 0131103628" 
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6 flex flex-col justify-between h-56">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Computer Systems: A Programmer's Perspective</h3>
+                  <p class="text-gray-600 text-sm mb-4">Explains the underlying elements common among all computer systems and how they affect general application performance</p>
+                </div>
+                <button class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition-colors duration-300">
+                  Buy on Amazon
+                </button>
+              </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="https://www.amazon.com/dp/1565924533" target="_blank" rel="noopener noreferrer" 
+               class="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out no-underline transform hover:scale-105 transition-transform duration-300 max-w-xs">
+              <img 
+                src="https://covers.openlibrary.org/b/isbn/1565924533-M.jpg" 
+                alt="Book Cover for ISBN 0131103628" 
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6 flex flex-col justify-between h-56">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">Mastering Algorithms with C</h3>
+                  <p class="text-gray-600 text-sm mb-4">Robust solutions for everyday programming tasks</p>
+                </div>
+                <button class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition-colors duration-300">
+                  Buy on Amazon
+                </button>
+              </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="https://www.amazon.com/dp/1593279523" target="_blank" rel="noopener noreferrer" 
+               class="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out no-underline transform hover:scale-105 transition-transform duration-300 max-w-xs">
+              <img 
+                src="https://covers.openlibrary.org/b/isbn/1593279523-M.jpg" 
+                alt="Book Cover for ISBN 0131103628" 
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6 flex flex-col justify-between h-56">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">The Linux Command Line</h3>
+                  <p class="text-gray-600 text-sm mb-4">Dive below and explore its depths with the power of the command line</p>
+                </div>
+                <button class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition-colors duration-300">
+                  Buy on Amazon
+                </button>
+              </div>
+            </a>
+
+            <!-- Card 6 -->
+            <a href="https://www.amazon.com/dp/1466560010" target="_blank" rel="noopener noreferrer" 
+            class="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out no-underline transform hover:scale-105 transition-transform duration-300 max-w-xs">
+            <img 
+              src="https://covers.openlibrary.org/b/isbn/1466560010-M.jpg" 
+              alt="Book Cover for ISBN 0131103628" 
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6 flex flex-col justify-between h-56">
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Game Engine Architecture</h3>
+                <p class="text-gray-600 text-sm mb-4">A complete guide to the theory and practice of game engine software development</p>
+              </div>
+              <button class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition-colors duration-300">
+                Buy on Amazon
+              </button>
+            </div>
+          </a>
+
+          <!-- Card 6 -->
+          <a href="https://www.freetechbooks.com/object-oriented-programming-with-ansi-c-t551.html" target="_blank" rel="noopener noreferrer" 
+          class="block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 ease-in-out no-underline transform hover:scale-105 transition-transform duration-300 max-w-xs">
+          <img 
+            src="https://covers.openlibrary.org/b/isbn/1105105687-M.jpg" 
+            alt="Book Cover for ISBN 0131103628" 
+            class="w-full h-64 object-cover"
+          />
+          <div class="p-6 flex flex-col justify-between h-56">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Object-oriented Programming with Ansi-C</h3>
+              <p class="text-gray-600 text-sm mb-4">Uses ANSI-C to discover how object-oriented programming is done, what its techniques are</p>
+            </div>
+            <button class="w-full bg-indigo-600 text-white py-2 rounded-md font-semibold hover:bg-indigo-700 transition-colors duration-300">
+              Download
+            </button>
+          </div>
+        </a>
+
+          </div>
+          
+      </main>
+
+  <footer class="bg-gray-200 text-center text-gray-600 py-6 mt-12">
+    © 2025 Paul Stone
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('hidden');
+  
+      // Update aria-expanded for accessibility
+      const expanded = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+
+</body>
+</html>

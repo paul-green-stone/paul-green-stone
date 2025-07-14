@@ -1,9 +1,127 @@
-<main>
-  <h2>My Projects</h2>
-  <div class="project-card">
-    <h3>Custom Game Framework</h3>
-    <p>A modular C framework for 2D games. Features: SDL2, state management, resource loading.</p>
-    <a href="https://github.com/yourusername/yourframework">View on GitHub</a>
-  </div>
-  <!-- Repeat for each project -->
-</main>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Projects - Paul Stone</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/images/projects.svg" />
+
+    <style>
+      /* When button has 'open' class, animate spans to form a cross */
+      #burger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+  
+      #burger.open span:nth-child(2) {
+        opacity: 0;
+      }
+  
+      #burger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    </style>
+  </head>
+  <!-- Here go comments -->
+  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white">
+    <div class="container mx-auto flex items-center justify-between p-4">
+
+      <!-- Logo + Photo container -->
+      <a href="index.html" class="flex items-center space-x-3 hover:text-indigo-400">
+        <!-- Photo -->
+        <img 
+          src="assets/images/paul.jpg" 
+          alt="Paul Stone" 
+          class="w-10 h-10 rounded-full object-cover border-2 border-indigo-400"
+        />
+        <!-- Logo text -->
+        <span class="text-2xl font-bold whitespace-nowrap">Paul Stone</span>
+      </a>
+  
+      <!-- Burger Menu Button -->
+      <button id="burger" aria-label="Toggle menu" aria-expanded="false" class="md:hidden flex flex-col justify-center items-center w-10 h-10 relative group">
+        <span class="block w-8 h-1 bg-indigo-400 rounded transition-transform duration-300 ease-in-out origin-center mb-1"></span>
+        <span class="block w-8 h-1 bg-indigo-400 rounded transition-opacity duration-300 ease-in-out"></span>
+        <span class="block w-8 h-1 bg-indigo-400 rounded transition-transform duration-300 ease-in-out origin-center mt-1"></span>
+      </button>
+  
+      <!-- Desktop Menu -->
+      <div id="menu" class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-indigo-400 border-b-2 border-transparent hover:border-indigo-400 pb-1 transition-colors duration-300 inline-block">
+          <span>Home</span>
+        </a>
+        <a href="library.html" class="hover:text-indigo-400 border-b-2 border-transparent hover:border-indigo-400 pb-1 transition-colors duration-300">Library</a>
+        <a href="library.html" class="text-indigo-400 font-semibold border-b-2 border-indigo-400 pb-1 inline-block">
+          <span>Projects</span>
+        </a>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+      <div class="container mx-auto flex flex-col p-4 space-y-3">
+        <a href="index.html" class="group hover:text-indigo-400 transition-colors duration-300 pb-1 inline-block">
+          <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+            Home
+          </span>
+        </a>
+        <a href="library.html" class="group hover:text-indigo-400 transition-colors duration-300 pb-1">
+          <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+            Library
+          </span>
+        </a>
+        <a href="library.html" class="text-indigo-400 font-semibold group hover:text-indigo-400 transition-colors duration-300 pb-1 inline-block">
+          <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+            Projects
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>  
+
+    <main class="flex-grow container mx-auto px-6 py-16 max-w-4xl">
+      <h1 class="text-3xl font-bold mb-6">Projects</h1>
+      <p class="mb-6">A selection of my C/C++ projects focused on game development and GUI applications.</p>
+
+      <div class="space-y-8">
+        <article class="border rounded-lg p-6 bg-white shadow hover:shadow-lg transition-shadow">
+          <h2 class="text-2xl font-semibold mb-2">Game Engine Prototype</h2>
+          <p class="mb-2">A lightweight 2D game engine built in pure C with SDL2, featuring object-oriented paradigm.</p>
+          <a href="https://github.com/paul-green-stone/start" class="text-indigo-600 hover:underline">View on GitHub</a>
+        </article>
+
+        <article class="border rounded-lg p-6 bg-white shadow hover:shadow-lg transition-shadow">
+          <h2 class="text-2xl font-semibold mb-2">Linked List Data Type</h2>
+          <p class="mb-2">A collection of linked lists used to implement various components. I use them to build different features within my framework.</p>
+          <a href="https://github.com/paul-green-stone/CList/tree/naga" class="text-indigo-600 hover:underline">View on GitHub</a>
+        </article>
+
+        <!-- Add more projects here -->
+      </div>
+    </main>
+
+    <footer class="bg-gray-200 text-center text-gray-600 py-6 mt-12">
+      © 2025 Paul Stone
+    </footer>
+
+    <script>
+      const burger = document.getElementById('burger');
+      const mobileMenu = document.getElementById('mobile-menu');
+    
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        mobileMenu.classList.toggle('hidden');
+    
+        // Update aria-expanded for accessibility
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', !expanded);
+      });
+    </script>
+
+  </body>
+</html>

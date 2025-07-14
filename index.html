@@ -1,26 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <title>Paul Stone – Portfolio</title>
-      <link rel="stylesheet" href="style.css" />
-    </head>
-<body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="library.html">Library</a>
-    <a href="about.html">About</a>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Home - Paul Stone</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/images/home.svg" />
+
+  <style>
+    /* When button has 'open' class, animate spans to form a cross */
+    #burger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #burger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #burger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      
+      <!-- Logo + Photo container -->
+      <a href="index.html" class="flex items-center space-x-3 hover:text-indigo-400">
+        <!-- Photo -->
+        <img 
+          src="assets/images/paul.jpg" 
+          alt="Paul Stone" 
+          class="w-10 h-10 rounded-full object-cover border-2 border-indigo-400"
+        />
+        <!-- Logo text -->
+        <span class="text-2xl font-bold whitespace-nowrap">Paul Stone</span>
+      </a>
+    
+      <!-- Burger Menu Button -->
+      <button id="burger" aria-label="Toggle menu" aria-expanded="false" class="md:hidden flex flex-col justify-center items-center w-10 h-10 relative group">
+        <span class="block w-8 h-1 bg-indigo-400 rounded transition-transform duration-300 ease-in-out origin-center mb-1"></span>
+        <span class="block w-8 h-1 bg-indigo-400 rounded transition-opacity duration-300 ease-in-out"></span>
+        <span class="block w-8 h-1 bg-indigo-400 rounded transition-transform duration-300 ease-in-out origin-center mt-1"></span>
+      </button>
+    
+      <!-- Desktop Menu -->
+      <div id="menu" class="hidden md:flex space-x-6">
+        <a href="index.html" class="text-indigo-400 font-semibold border-b-2 border-indigo-400 pb-1">Home</a>
+        <a href="library.html" class="hover:text-indigo-400 border-b-2 border-transparent hover:border-indigo-400 pb-1 transition-colors duration-300">Library</a>
+        <a href="projects.html" class="hover:text-indigo-400 border-b-2 border-transparent hover:border-indigo-400 pb-1 transition-colors duration-300">Projects</a>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+      <div class="container mx-auto flex flex-col p-4 space-y-3">
+        <a href="index.html" class="text-indigo-400 font-semibold group hover:text-indigo-400 transition-colors duration-300 pb-1">
+          <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+            Home
+          </span>
+        </a>
+        <a href="library.html" class="group hover:text-indigo-400 transition-colors duration-300 pb-1">
+          <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+            Library
+          </span>
+        </a>
+        <a href="projects.html" class="group hover:text-indigo-400 transition-colors duration-300 pb-1">
+          <span class="bg-left-bottom bg-gradient-to-r from-indigo-400 to-indigo-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out">
+            Projects
+          </span>
+        </a>
+      </div>
+    </div>
   </nav>
-  <header>
-    <h1>Paul Stone</h1>
-    <p>C/C++ Programmer, Game Developer & Framework Architect</p>
-  </header>
-  <main>
-    <section>
-      <h2>Welcome</h2>
-      <p>This is my portfolio featuring my custom framework, games, and reading library.</p>
+
+  <!-- Main content -->
+  <main class="flex-grow container mx-auto px-6 py-16 max-w-3xl">
+    <div class="flex flex-col md:flex-row items-center md:space-x-10 space-y-6 md:space-y-0">
+      <!-- Profile Photo -->
+      <img
+        src="assets/images/paul.jpg"
+        alt="Your Name"
+        class="w-40 h-40 rounded-full shadow-lg object-cover border-4 border-indigo-400"
+      />
+      <!-- Intro Text -->
+      <div>
+        <h1 class="text-4xl font-extrabold mb-4">Welcome!</h1>
+        <p class="text-lg leading-relaxed">
+          I am a <strong>C/C++ developer</strong> passionate about <strong>game development</strong> and <strong>GUI applications</strong>. This portfolio showcases my projects and resources I’ve gathered along the way.
+        </p>
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-10 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-gray-900">About Me</h2>
+      <p class="text-lg mb-4 text-gray-800">
+        Hi! My name is Ilya, but you can call me Paul Stone. I am a programmer, and I really enjoy developing games! I am currently writing a framework in C using an object-oriented programming paradigm. I am passionate about mathematics and physics because to implement ideas in a game, you need to understand what you are trying to create. Recently, I also became a student — I am planning to study at Synergy University in the Faculty of Information Systems and Technologies, specializing in Game Development, Augmented Reality, and Virtual Reality.
+      </p>
+      <p class="text-lg text-gray-800">
+        In addition, I am actively studying English and try not to miss a single day without at least a little bit of math practice. I also love stargazing.
+      </p>
     </section>
+
+    <!-- Skills Section -->
+    <section class="bg-white rounded-xl shadow-md p-8 mb-10 max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-gray-900">Skills</h2>
+      <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+        <li><strong>Proficient in C programming</strong>, including advanced features like memory management and system-level operations</li>
+        <li><strong>Basic knowledge of Perl scripting</strong> for automation and text processing</li>
+        <li><strong>Experienced with Linux command line</strong>, comfortable navigating, scripting, and system administration</li>
+        <li><strong>Skilled in effective information searching and research</strong> on the internet to solve programming challenges</li>
+        <li><strong>Familiar with working with AI technologies</strong>, including understanding and integrating AI tools and concepts</li>
+      </ul>
+    </section>
+
+    <section class="my-10 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4 text-center">Let's Take a Look Through The Camera</h2>
+      <video controls width="100%" class="rounded-lg shadow-lg" poster="assets/videos/camera.mp4">
+        <source src="assets/videos/camera.mp4" type="video/mp4" />
+        <!-- You can add more source tags for different formats if needed -->
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section class="my-10 max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4 text-center">Widgets (polymorphism and simple inheritance)</h2>
+      <video controls width="100%" class="rounded-lg shadow-lg" poster="assets/videos/widgets.mp4">
+        <source src="assets/videos/widgets.mp4" type="video/mp4" />
+        <!-- You can add more source tags for different formats if needed -->
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
   </main>
+  
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-center text-gray-600 py-6 mt-12">
+    © 2025 Paul Stone
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('hidden');
+  
+      // Update aria-expanded for accessibility
+      const expanded = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+  
 </body>
 </html>
