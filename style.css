@@ -1,0 +1,32 @@
+body {
+  background: #181818;
+  color: #e0e0e0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  background: #232323;
+  padding: 1em;
+  text-align: center;
+}
+nav a {
+  color: #b0c4ff;
+  margin: 0 1em;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #fff;
+}
+header {
+  text-align: center;
+  margin: 2em 0;
+}
+section {
+  margin: 2em auto;
+  max-width: 700px;
+  background: #222;
+  padding: 2em;
+  border-radius: 10px;
+}
